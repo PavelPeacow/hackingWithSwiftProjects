@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+    var numberImage: Int
+    var arrayImage: [String]
+    
+    var body: some View {
+        Image(arrayImage[numberImage])
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .shadow(radius: 5)
+    }
+}
+
 struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US", "Monaco"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
@@ -55,10 +67,7 @@ struct ContentView: View {
                         Button {
                             flagTapped(number)
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            FlagImage(numberImage: number, arrayImage: countries)
                         }
                     }
                     
