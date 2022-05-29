@@ -38,38 +38,36 @@ var currency: FloatingPointFormatStyle<Double>.Currency {
     return .currency(code: Locale.current.currencyCode ?? "USD")
 }
 
+
+
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
     
-    
+    let types = ["Business", "Personal"]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+                ForEach(types, id: \.self) { section in
+                    Section(header: Text(section)) {
+                        ForEach(expenses.items.filter {$0.type == section}) { item in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    Text(item.type)
+                                }
+                                
+                                Spacer()
+                                Text(item.amount, format: currency)
+                                    .foregroundColor(getColor(amount: item.amount))
+                            }
                         }
-                        
-                        Spacer()
-                        if item.amount < 10 {
-                            Text(item.amount, format: currency)
-                                .foregroundColor(.green)
-                        } else if item.amount < 100 {
-                            Text(item.amount, format: currency)
-                                .foregroundColor(.yellow)
-                        } else {
-                            Text(item.amount, format: currency)
-                                .foregroundColor(.red)
+                        .onDelete(perform: removeItems)
                         }
-                        
                     }
-                }
-                .onDelete(perform: removeItems)
+                    
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -89,6 +87,15 @@ struct ContentView: View {
         expenses.items.remove(atOffsets: offset)
     }
     
+    func getColor(amount: Double) -> Color {
+        if amount < 10 {
+            return Color(.green)
+        } else if amount < 100 {
+           return Color(.yellow)
+        } else {
+           return Color(.red)
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
