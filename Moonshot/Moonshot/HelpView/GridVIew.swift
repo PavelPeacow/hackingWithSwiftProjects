@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  GridVIew.swift
 //  Moonshot
 //
 //  Created by Павел Кай on 02.06.2022.
@@ -7,23 +7,27 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct GridVIew: View {
     
     let astronauts: [String: Astronaut]
     let missions: [Mission]
+    
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
     
     @Binding var isList: Bool
     
     var body: some View {
         NavigationView {
-                List {
+            ScrollView {
+                LazyVGrid(columns: columns) {
                     ForEach(missions) { mission in
-                        LazyVStack {
+                        VStack {
                             NavigationLink {
                                 MissionView(mission: mission, astronauts: astronauts)
-                                    
                             } label: {
-                                HStack {
+                                VStack {
                                     Image(mission.image)
                                         .resizable()
                                         .scaledToFit()
@@ -42,14 +46,14 @@ struct ListView: View {
                                     .frame(maxWidth: .infinity)
                                     .background(.lightBackgroung)
                                 }
-                        }
+                            }
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(.lightBackgroung)
                         )
-                    
+                    }
                 }
                 .padding([.horizontal, .bottom])
             }
@@ -61,17 +65,19 @@ struct ListView: View {
                     Button {
                         isList.toggle()
                     } label: {
-                        Text("Switch to grid")
+                        Label("Switch to list", systemImage: "list.dash")
                     }
                 }
             }
         }
-        
     }
 }
 
-//struct ListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListView(isList: isList)
-//    }
-//}
+struct GridVIew_Previews: PreviewProvider {
+    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    static let missions: [Mission] = Bundle.main.decode("missions.json")
+    
+    static var previews: some View {
+        GridVIew(astronauts: astronauts, missions: missions, isList: .constant(false))
+    }
+}

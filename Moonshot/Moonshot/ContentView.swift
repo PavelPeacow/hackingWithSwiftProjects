@@ -13,10 +13,6 @@ struct ContentView: View {
     
     @State var isList = false
 
-    let columns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
-    
     var body: some View {
         Group {
             if isList {

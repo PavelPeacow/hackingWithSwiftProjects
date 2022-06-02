@@ -75,18 +75,10 @@
 		B51054312843AC7C004D2145 /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
-				B51054322843AC7C004D2145 /* MoonshotApp.swift */,
 				B51054342843AC7C004D2145 /* ContentView.swift */,
-				B5BD4F842848DF9E00103603 /* GridVIew.swift */,
-				B5BD4F862848DFA500103603 /* ListView.swift */,
-				B518D1FB2844E2340059EDE9 /* MissionView.swift */,
-				B5BD4F822848DE8B00103603 /* DividerView.swift */,
-				B5BD4F802848D6F800103603 /* ScrollViewForMissionView.swift */,
-				B518D1FD2844E8D40059EDE9 /* AstronautView.swift */,
-				B518D1F92844DF8C0059EDE9 /* Color-Theme.swift */,
-				B518D1F32844D75B0059EDE9 /* Astronaut.swift */,
-				B518D1F72844D9910059EDE9 /* Mission.swift */,
-				B518D1F52844D7C80059EDE9 /* Bundle-Decodable.swift */,
+				B5BD4F8A2848EFEF00103603 /* MainView */,
+				B5BD4F892848EFD200103603 /* HelpView */,
+				B5BD4F882848EFA900103603 /* Extension */,
 				B51054362843AC7C004D2145 /* Assets.xcassets */,
 				B51054382843AC7C004D2145 /* Preview Content */,
 			);
@@ -101,6 +93,38 @@
 				B518D1EF2844D7000059EDE9 /* missions.json */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5BD4F882848EFA900103603 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B518D1F92844DF8C0059EDE9 /* Color-Theme.swift */,
+				B518D1F32844D75B0059EDE9 /* Astronaut.swift */,
+				B518D1F72844D9910059EDE9 /* Mission.swift */,
+				B518D1F52844D7C80059EDE9 /* Bundle-Decodable.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B5BD4F892848EFD200103603 /* HelpView */ = {
+			isa = PBXGroup;
+			children = (
+				B5BD4F842848DF9E00103603 /* GridVIew.swift */,
+				B5BD4F862848DFA500103603 /* ListView.swift */,
+				B5BD4F802848D6F800103603 /* ScrollViewForMissionView.swift */,
+				B5BD4F822848DE8B00103603 /* DividerView.swift */,
+			);
+			path = HelpView;
+			sourceTree = "<group>";
+		};
+		B5BD4F8A2848EFEF00103603 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				B51054322843AC7C004D2145 /* MoonshotApp.swift */,
+				B518D1FB2844E2340059EDE9 /* MissionView.swift */,
+				B518D1FD2844E8D40059EDE9 /* AstronautView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
