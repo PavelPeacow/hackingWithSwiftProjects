@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B520C3F62852034000AD8D4D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B520C3F52852034000AD8D4D /* DetailView.swift */; };
 		B5882FE22850ECAE00EB621A /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5882FE02850ECAE00EB621A /* Bookworm.xcdatamodeld */; };
 		B5882FE42850ED7E00EB621A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5882FE32850ED7E00EB621A /* AddBookView.swift */; };
 		B5882FE62850F13E00EB621A /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5882FE52850F13E00EB621A /* RatingView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B520C3F52852034000AD8D4D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B5882FE12850ECAE00EB621A /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
 		B5882FE32850ED7E00EB621A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		B5882FE52850F13E00EB621A /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				B5EA13912850E1B20002016D /* BookWormApp.swift */,
 				B5EA13932850E1B20002016D /* ContentView.swift */,
+				B520C3F52852034000AD8D4D /* DetailView.swift */,
 				B5882FE72850F34F00EB621A /* EmojiRatingView.swift */,
 				B5882FE52850F13E00EB621A /* RatingView.swift */,
 				B5EA13A52850E8270002016D /* DataController.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5EA13942850E1B20002016D /* ContentView.swift in Sources */,
+				B520C3F62852034000AD8D4D /* DetailView.swift in Sources */,
 				B5882FE22850ECAE00EB621A /* Bookworm.xcdatamodeld in Sources */,
 				B5882FE82850F34F00EB621A /* EmojiRatingView.swift in Sources */,
 				B5EA13A62850E8270002016D /* DataController.swift in Sources */,
