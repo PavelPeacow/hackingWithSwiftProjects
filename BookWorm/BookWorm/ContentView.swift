@@ -34,6 +34,11 @@ struct ContentView: View {
                                 Text(book.author ?? "Unknown Author")
                                     .foregroundColor(.secondary)
                             }
+                            
+                            HStack {
+                                Spacer()
+                                Text((book.date?.formatted(date: .complete, time: .omitted)) ?? Date.now.formatted())
+                            }
                         }
                     }
                 }

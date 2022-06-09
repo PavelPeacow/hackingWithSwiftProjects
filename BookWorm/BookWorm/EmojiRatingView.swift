@@ -14,6 +14,7 @@ struct EmojiRatingView: View {
         switch rating {
         case 1:
             Text("1")
+                .foregroundColor(.red)
         case 2:
             Text("2")
         case 3:
